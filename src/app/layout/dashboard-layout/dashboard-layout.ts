@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 
 import { Sidebar } from '../../shared/components/sidebar/sidebar';
-import {  RouterOutlet } from '@angular/router';
-
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-layout',
-  imports: [Sidebar,RouterOutlet],
+  imports: [Sidebar, RouterOutlet],
   templateUrl: './dashboard-layout.html',
-  styleUrl: './dashboard-layout.scss'
+  styleUrls: ['./dashboard-layout.scss'],
 })
-export class DashboardLayout {
-}
+export class DashboardLayout {}

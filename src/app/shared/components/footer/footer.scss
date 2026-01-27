@@ -1,0 +1,13 @@
+:host { display:block }
+
+.app-footer {
+	height: 48px;
+	display:flex;
+	align-items:center;
+	background:#0b1120;
+	color:#aab;
+	padding:0 16px;
+	font-size:0.9rem;
+}
+.footer-inner { width:100%; display:flex; justify-content:space-between }
+

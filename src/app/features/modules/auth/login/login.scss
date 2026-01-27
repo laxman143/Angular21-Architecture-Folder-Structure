@@ -1,0 +1,9 @@
+:host { display:block }
+
+.login-page { min-height: calc(100vh - 112px); display:flex; align-items:center; justify-content:center; padding:24px; background:linear-gradient(180deg,#f7fafc,#eef2f7) }
+.login-card { width:100%; max-width:420px; background:#fff; padding:28px; border-radius:8px; box-shadow:0 6px 24px rgba(16,24,40,0.08); text-align:left }
+.logo { font-weight:700; margin-bottom:8px }
+.login-form label { display:block; margin:12px 0 }
+.login-form input { width:100%; padding:10px 12px; border:1px solid #e6e9ef; border-radius:6px; margin-top:6px }
+.btn { width:100%; margin-top:16px; padding:10px; background:#0b63ff; color:#fff; border:none; border-radius:6px }
+
