@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject  } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import {Auth} from '../../../../core/services/auth';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,8 @@ import { Router } from '@angular/router';
   styleUrl: './login.scss',
 })
 export class Login {
+
+  authService = inject(Auth);
 
   loginForm: FormGroup<{
     email: FormControl<string>,
@@ -24,7 +27,9 @@ export class Login {
   }
 
   submit(){
+
     localStorage.setItem("isLogin", "true");
-    this.router.navigate(['/'])
+    this.authService.login();
+    this.router.navigate(['/'], { replaceUrl: true })
   }
 }

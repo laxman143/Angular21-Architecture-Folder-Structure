@@ -5,3 +5,4 @@
 .thumb { width:56px; height:56px; background:linear-gradient(135deg,#e2e8f0,#cbd5e1); border-radius:6px }
 .meta .name { font-weight:600 }
 .meta .price { color:#667; margin-top:6px }
+section {    max-height: 80vh; overflow: auto;}

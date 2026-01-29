@@ -3,6 +3,9 @@
 		<span class="logo">Acme</span>
 	</div>
 	<div class="user">
-		<div class="avatar">A</div>
-	</div>
+		<!-- <div class="avatar">A</div> -->
+        @if(isLogged()) {
+		<button class="btn-logout" (click)="logout()">Logout</button>
+        }
+    </div>
 </header>

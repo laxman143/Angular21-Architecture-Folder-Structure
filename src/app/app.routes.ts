@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { DashboardLayout } from './layout/dashboard-layout/dashboard-layout';
+import { authGuard } from './core/guards/auth-guard';
 
 export const routes: Routes = [
     {
@@ -9,6 +10,7 @@ export const routes: Routes = [
     {
         path: '',
         component: DashboardLayout,
+        canActivate:[authGuard],
         children: [
             {
                 path:'dashboard',
@@ -18,6 +20,11 @@ export const routes: Routes = [
             {
                 path:'products',
                 loadChildren:()=> import('./features/modules/products/product.routes').then(m=>m.PRODUCT_ROUTES)
+            },
+            {
+                path: '',
+                pathMatch:'full',
+                redirectTo: 'dashboard'
             }
         ]
     },
