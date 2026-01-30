@@ -1,21 +1,17 @@
 <section class="dashboard">
 	<div class="hero">
 		<h1>Welcome back</h1>
-		<p class="muted">Here's a quick summary of your store.</p>
+     <hr>
+		<h1> Directives </h1>
+		<p class="muted" [appHighlight]="'#d1e7dd'">Custom Hover directive with passing parameter</p>
+		<p class="muted" appHighlight> Custom Hover directive without parameter</p>
+
+	 <hr>
+	  <h1>Pipe</h1>
+
+	  	<p class="muted" >{{price1 | priceformat:'$':2}}</p>
+		<p class="muted" >{{price2 | priceformat}}</p>
 	</div>
 
-	<div class="cards">
-		<div class="card"> <div class="num">124</div> <div class="label">Orders</div> </div>
-		<div class="card"> <div class="num">32</div> <div class="label">Products</div> </div>
-		<div class="card"> <div class="num">8</div> <div class="label">Pending</div> </div>
-	</div>
-
-	<div class="section">
-		<h2>Latest Products</h2>
-		<div class="product-preview">
-			<div class="p-item">Product A</div>
-			<div class="p-item">Product B</div>
-			<div class="p-item">Product C</div>
-		</div>
-	</div>
+	
 </section>
