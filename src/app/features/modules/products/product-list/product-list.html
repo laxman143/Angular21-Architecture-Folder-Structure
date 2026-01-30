@@ -4,10 +4,38 @@
 		<button class="btn small">+ Add product</button>
 	</div> -->
 
+       <!-- Initialy load whole image -->
+
+	<!-- 
 	<div class="grid">
 		@for(item of products(); track item.id) {
 		<div class="card">
+			<div class="thumb">
+				<img loading="lazy" alt="product" [src]="item.images[0]" />
+			</div>
+			<div class="meta">
+				<div class="name">{{item.title}}</div>
+				<div class="price">${{item.price}}</div>
+			</div>
+		</div>
+		}
+	</div> -->
+
+	<!-- using defer , when div visible then only image load for fast -->
+
+	<div class="grid">
+		@for(item of products(); track item.id) {
+		<div class="card">
+			@defer (on viewport) {
+			<div class="thumb">
+
+				<img loading="lazy" alt="product" [src]="item.images[0]" />
+
+			</div>
+			}
+			@placeholder {
 			<div class="thumb"></div>
+			}
 			<div class="meta">
 				<div class="name">{{item.title}}</div>
 				<div class="price">${{item.price}}</div>
@@ -15,4 +43,7 @@
 		</div>
 		}
 	</div>
+
+
+
 </section>

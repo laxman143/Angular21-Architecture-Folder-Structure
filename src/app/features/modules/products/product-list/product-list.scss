@@ -6,3 +6,9 @@
 .meta .name { font-weight:600 }
 .meta .price { color:#667; margin-top:6px }
 section {    max-height: 80vh; overflow: auto;}
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
