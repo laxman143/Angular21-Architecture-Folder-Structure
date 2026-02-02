@@ -57,3 +57,23 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+-------------
+1. Added BDD 
+
+   installation 
+    1. npm init playwright@latest
+    2. npm install --save-dev @cucumber/cucumber ts-node
+
+    Create cucumber js file and add below configuration 
+       require: ['e2e/steps/**/*.ts','e2e/support/**/*.ts'],
+       paths: ['e2e/features/**/*.feature'],
+
+  
+   Run BDD framework :  npm run bdd
+   1. Write steps in e2e/steps folder
+   2. Write cases in e2e/features folder
+   3. Support folder have world.ts and hooks.ts
+      - hooks file run init and close on every case
+      - worlds ts file used for share command object , context and browser

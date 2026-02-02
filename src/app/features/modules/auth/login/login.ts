@@ -30,6 +30,6 @@ export class Login {
 
     localStorage.setItem("isLogin", "true");
     this.authService.login();
-    this.router.navigate(['/'], { replaceUrl: true })
+    this.router.navigate(['/dashboard'], { replaceUrl: true })
   }
 }
