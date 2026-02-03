@@ -1,11 +1,13 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/world";
 import { expect } from "@playwright/test";
-import { login } from "../support/login.helper";
+import { LoginPO } from "../support/login.po";
+
 
 Given('user is logged in',async function(this:CustomWorld){
-//  await login(this.page);
-  await this.page.goto('http://localhost:4200/login');
+  // const loginPO = new LoginPO(this.page);
+  //  await loginPO.login();
+    await this.page.goto('http://localhost:4200/login');
     await this.page.fill('input[name=email]','test@example.com');
     await this.page.fill('input[name=password]','password123');
 
