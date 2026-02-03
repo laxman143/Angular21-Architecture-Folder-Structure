@@ -1,18 +1,18 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/world";
 import { expect } from "@playwright/test";
+import { login } from "../support/login.helper";
 
 Given('user is logged in',async function(this:CustomWorld){
-// await this.page.goto('http://localhost:4200/dashboard');
-     await this.page.goto('http://localhost:4200/login');
+//  await login(this.page);
+  await this.page.goto('http://localhost:4200/login');
+    await this.page.fill('input[name=email]','test@example.com');
+    await this.page.fill('input[name=password]','password123');
 
-  await this.page.fill('input[name="email"]', 'test@example.com');
-  await this.page.fill('input[name="password"]', 'password123');
-
-  await Promise.all([
-    this.page.waitForURL('**/dashboard'),
-    this.page.click('button[type="submit"]')
-  ]);
+    await Promise.all([
+        this.page.waitForURL('**/dashboard'),
+        this.page.click('button[type="submit"]')
+    ])
 })
 
 Given('user is on dashboard page',async function(this:CustomWorld){

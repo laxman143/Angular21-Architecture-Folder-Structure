@@ -84,3 +84,22 @@ For more information on using the Angular CLI, including detailed command refere
    Run slow motion app : npx cucumber-js   
    If we want to pause browser for debugger - then add below statement
      await this.page.pause();
+
+
+2. RUN only signle feature , Add @smoke on feature and @important on Scenario
+ 
+  @smoke
+  Feature: Products navigation from left panel
+
+  Background:
+    Given user is logged in 
+    And user is on dashboard page
+
+ @important
+  Scenario: View products list from left panel
+    When user clicks on Products menu from left panel
+    Then user should be redirected to products page
+    And product list should be displayed
+    And at least one product card should be visible
+    
+ then run --- npx cucumber-js --tags "@important" --- command
