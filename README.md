@@ -77,3 +77,10 @@ For more information on using the Angular CLI, including detailed command refere
    3. Support folder have world.ts and hooks.ts
       - hooks file run init and close on every case
       - worlds ts file used for share command object , context and browser
+
+
+ NOTE
+   Run BDD - npm run bdd
+   Run slow motion app : npx cucumber-js   
+   If we want to pause browser for debugger - then add below statement
+     await this.page.pause();
